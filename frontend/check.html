@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      async function applyjob(req,res){
+        
+        jobModelCtrl.jobpostingmodel.find({"Instrutor_email": req.params.Instrutor_email}).then((resp)=>{
+          console.log(resp)
+          console.log(resp.length)
+          else{
+            jobModelCtrl.jobpostingmodel.findOneAndUpdate({id:id},{$push:{members_applied:req.body}}).then(()=>{
+              res.send("Successfully applied for the job")
+            })
+          }
+        })
+      }
+    </script>
+    <script>
+      Course_module:['Block_chain':[{
+    question: 'What is the capital of France?',
+    options: [
+      { option: 'Paris', isCorrect: true },
+      { option: 'London', isCorrect: false },
+      { option: 'Berlin', isCorrect: false },
+      { option: 'Madrid', isCorrect: false }
+    ]
+  }]]
+
+
+
+
+
+
+
+
+    questions: [{
+    question: 'What is the capital of France?',
+    options: [
+      { option: 'Paris', isCorrect: true },
+      { option: 'London', isCorrect: false },
+      { option: 'Berlin', isCorrect: false },
+      { option: 'Madrid', isCorrect: false }
+    ]
+  }]
+      </script>
+
+
+
+
+
+<script>
+[]
+0
+e
+
+
+1
+f
+
+
+
+2
+f
+
+</script>
+  </body>
+</html>
+
+
+Course module = course:[0:{"Blockchain":[{urllink:'http:youtube.com'},{question:{'option1':true},{'option2':false},{'option3':false},{'option4':false},{isCorrect:true}]}]
+
+
+
+const mongoose = require('mongoose');
+
+const optionSchema = new mongoose.Schema({
+  option: {
+    type: String,
+    required: true
+  },
+  isCorrect: {
+    type: Boolean,
+    required: true,
+    default: false
+  }
+});
+
+const quizQuestionSchema = new mongoose.Schema({
+  question: {
+    type: String,
+    required: true
+  },
+  options: [optionSchema]
+});
+
+const courseModuleSchema = new mongoose.Schema({
+  urlLink: {
+    type: String,
+    required: true
+  },
+  quizQuestions: [quizQuestionSchema]
+});
+
+const courseSchema = new mongoose.Schema({
+  courseModules: [courseModuleSchema]
+});
+
+const Course = mongoose.model('Course', courseSchema);
+
+module.exports = Course;

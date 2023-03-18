@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Forms</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <H3>ADMIN PANEL</H3>
+                            <!-- <img src="images/icon/logo.png" alt="CoolAdmin" /> -->
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                        </li>
+                        
+                        <li>
+                            <a href="user.html">
+                                <i class="fas fa-table"></i>Users</a>
+                        </li>
+                       
+                        <li>
+                            <a href="ins_request.html">
+                                <i class="fas fa-chart-bar"></i>Instructors_requests</a>
+                        </li>
+                        <li >
+                            <a href="courses.html">
+                                <i class="far fa-check-square"></i>Courses</a>
+                        </li>
+                        <li  class="active">
+                            <a href="queries.html">
+                                <i class="fas fa-table"></i>Queries</a>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <h3>ADMIN PANEL</h3>
+                    <!-- <img src="images/icon/logo.png" alt="Cool Admin" /> -->
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li class=" has-sub">
+                            <a class="js-arrow" href="index.html">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>   
+                        </li>
+                        <li>
+                            <a href="user.html">
+                                <i class="fas fa-table"></i>Users</a>
+                        </li>
+
+                     
+                        <li>
+                            <a href="ins_request.html">
+                                <i class="fas fa-chart-bar"></i>Instructors_requests</a>
+                        </li>
+                        <li>
+                            <a href="courses.html">
+                                <i class="far fa-check-square"></i>Courses</a>
+                      </li>
+                          <li class="active">
+                            <a href="queries.html">
+                                <i class="fas fa-table"></i>Queries</a>
+                        </li>
+                       
+                    </ul>
+                </nav>
+            </div>  
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <button class="btn btn-info" style="color: blue;" type="HOME">
+                                <a href="../frontend/index.html"><div style="color:white">HOME</div></a>
+                                <!-- <i class="zmdi zmdi-search"></i> -->
+                            </button>
+                            <!-- <form class="form-header" action="" method="POST">
+                                 <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." /> -->
+                                <!-- <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button> -->
+                            </form> -->
+                            <div class="header-button">
+                                <div class="noti-wrap">
+    
+                                </div>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">ADMIN</a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">ADMIN</a>
+                                                    </h5>
+                                                    <span class="email">ADMIN@EMAIL.COM</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="../frontend/index.html">
+                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p25">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- DATA TABLE -->
+                                <h3 class="title-5 m-b-35">data table</h3>
+                                <div class="table-data__tool">
+                                    
+                                    
+                                </div>
+                                <div class="table-responsive table-responsive-data2">
+                                    <table class="display" style="width: 100%;" id="queries_table">
+                                    </table>
+                                </div>
+                                <!-- END DATA TABLE -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <script>
+        function renderCards(data){
+            for(let [key,value] of Object.entries(data))
+            {
+                // console.log(arr2)
+            document.querySelector('#adding_places').innerHTML+=`<div class="col-lg-6">
+                                                    <div class="card m-b-10" style="padding: 15px;">
+                                                        <img class="card-img-top w-100" src="${value['destinationImage']}" alt="Card image">
+                                                    <div class="au-card-inner" style="margin-top: 20px;">   
+                                                        <h5 class="title-2" style="text-align: center;">${value['destinationName']}</h5>
+                                                    </div>
+                                                    </div>
+                                                </div>`
+            }
+        }
+        function func(){
+            // let placeArr=[];
+            // if(localStorage.getItem('places')!=null)
+            //     placeArr=JSON.parse(localStorage.getItem('places'));
+            var destinationImg=document.getElementById("destinationImage").value;
+            var destinationNa=document.getElementById("destinationName").value;
+            var destinationDe=document.getElementById("destinationDesc").value;
+            var desc={
+                destinationImage:destinationImg,
+                destinationName:destinationNa,
+                destinationDesc:destinationDe,
+            }
+            // placeArr.push(desc);
+            
+            // var arr = [{name:"heelo", description:"this is"}]
+            // alert('ADDED destination');
+            // for(let i = 0; i < arr.length; i++){
+            // }
+            let place=JSON.stringify(desc);
+            $.ajax({
+                "method":"POST",contentType:"application/json",'data':place,'url':'/api/place',
+                "success":(e)=>{alert("sucessfully added")},error:(e)=>{alert(e)}
+            });
+            
+            
+         
+        }
+        window.onload=function(){
+//             let place2=[];
+// if(localStorage.getItem('places')) place2=JSON.parse(localStorage.getItem('places'))
+$.ajax({
+    "method":"GET",contentType:"application/json",'url':'/api/places',
+    "success":function(e){
+        renderCards(e.data);
+    },
+    error:function(e){
+        alert("errorrr......");
+    }
+});
+
+        }
+    </script> -->
+    <script>
+        $.ajax({
+        type: "POST",
+        url: "/get-user-count",
+        success: function(result) {
+            $("#user-count").text(result.count);
+        }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+
+    <script>
+        $.get('http://localhost:9999/get_queries_data/get_queries',function(data,status){
+            console.log(data)
+            $(document).ready(function(){
+                $.noConflict();
+                var table = $('#queries_table').DataTable({
+                    data:data,
+                    columns:[
+                    { data : 'User_Name',title:'Name'},
+{ data : 'Email',title:'Email'},
+{ data : 'Subject',title:'Subject'},
+{data:'Message',title:'Message'}
+                      
+                    ],
+                    responsive: true
+                })
+
+            })
+        })
+
+     </script>
+
+</body>
+
+</html>
+<!-- end document-->

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Course Name</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+
+    }
+    h1,p {
+        background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .section {
+      margin: 20px 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .section-header {
+      background-color: #ddd;
+      
+      padding: 10px;
+    }
+    .module {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      justify-content: space-between;
+      padding: 10px;
+      margin: 10px 100px;
+      cursor: pointer;
+    }
+    .module:hover {
+      background-color: #f5f5f5;
+    }
+    .module-name {
+      flex: 1;
+      font-weight: bold;
+    }
+    .play-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .quiz-button {
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+
+    }
+    .quiz-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz-option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quiz-option:hover {
+  background-color: #f0f0f0;
+}
+
+.quiz-option.selected {
+  background-color: #e5f5f5;
+}
+
+.quiz-option.correct .quiz-option-result::before {
+  content: "✔";
+  color: green;
+}
+
+.quiz-option.incorrect .quiz-option-result::before {
+  content: "✘";
+  color: red;
+}
+
+.quiz-option span {
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.quiz-option-text {
+  flex: 1;
+}
+
+.quiz-option-result {
+  margin-left: auto;
+  font-size: 20px;
+}
+.sub{
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      margin-left: 120px;
+      cursor: pointer;
+
+    }
+
+    .play-button, .quiz-button, .submit,.close-button ,.next-button,.prev-button,.submit-button{
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      
+      margin-right: 10px;
+      cursor: pointer;
+
+    }
+    .submit-button{
+      position: relative;
+      margin-left: 220px;
+      top:-40px;
+      
+
+    }
+    .close-button{
+      position: relative;
+      width:60px;
+      top:-300px;
+      margin-top: 1px;
+      margin-left: 220px;
+       
+    }
+    /* Style for the video element */
+    video {
+      display: none;
+      height: 500px;
+      position: absolute;
+      margin-top: 20px;
+       width: 900px;
+      z-index: 9999;
+      margin-right: 50px;
+    }
+  
+    .quizc{
+      height: 100vh;
+    }
+.quiz{
+        
+  position: fixed;
+  top: 55%;
+  left: 70%;
+
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  z-index: 9999;
+  display: none;
+}
+.quiz-container{
+  height:600px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .pdfobject {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+/*   
+  .close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  } */
+  .progress-bar {
+  background-color: #f2f2f2;
+  height: 10px;
+  width: 100%;
+}
+
+.progress {
+  background-color: #da1d0f;
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+
+  .close-button:hover,
+  .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+    
+  </style>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+//      function showVideo(youtubeLink) {
+//     var iframe = document.createElement("iframe");
+//     iframe.setAttribute("width", "560");
+//     iframe.setAttribute("height", "315");
+//     iframe.setAttribute("src", "https://www.youtube.com/embed/" + youtubeLink);
+//     iframe.setAttribute("frameborder", "0");
+//     iframe.setAttribute("allow", "autoplay; encrypted-media");
+//     iframe.setAttribute("allowfullscreen", "");
+//     var videoContainer = document.getElementById("video-container");
+//     videoContainer.innerHTML = "";
+//     videoContainer.appendChild(iframe);
+//     var modal = document.getElementById("video-modal");
+//     modal.style.display = "block";
+//   }
+
+  function showVideo(youtubeLink) {
+    var iframe = document.createElement("iframe");
+    iframe.setAttribute("width", "560");
+    iframe.setAttribute("height", "315");
+    iframe.setAttribute("src", "https://www.youtube.com/embed/" + youtubeLink);
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("allow", "autoplay; encrypted-media");
+    iframe.setAttribute("allowfullscreen", "");
+    var videoContainer = document.getElementById("video-container");
+    videoContainer.innerHTML = "";
+    videoContainer.appendChild(iframe);
+    var modal = document.getElementById("video-modal");
+    modal.style.display = "block";
+  }
+
+  function closeVideo() {
+    var modal = document.getElementById("video-modal");
+    modal.style.display = "none";
+  }
+
+
+
+
+        // Function to show the video element when the "Play Video" button is clicked
+    //     function showVideo(videoId) {
+    //       var video = document.getElementById(videoId);
+    //       var iframe = document.createElement("iframe");
+    // iframe.setAttribute("width", "560");
+    // iframe.setAttribute("height", "315");
+    // iframe.setAttribute("src", "https://www.youtube.com/embed/" + videoId);
+    // iframe.setAttribute("frameborder", "0");
+    // iframe.setAttribute("allow", "autoplay; encrypted-media");
+    // iframe.setAttribute("allowfullscreen", "");
+    // var videoContainer = document.getElementById(videoId);
+    // videoContainer.innerHTML = "";
+    // videoContainer.appendChild(iframe);
+    //       video.style.display = "block";
+    //     //    showButton()
+    //     //    console.log("hey")
+    //     //   var button = document.createElement('button');
+    //     //    button.innerHTML = 'Go to quiz';
+    //     //    document.body.appendChild(button);
+    //     // button.onclick =  function showQuiz(quizId) {
+    //     //     var quiz = document.getElementById(quizId);
+    //     //  quiz.style.display = "block";s
+
+    //     }
+//         var button=document.getElementsByClassName('quiz-button')
+//         console.log(button)
+//       function showButton() {
+        
+//         button.style.display = "block";
+// }
+
+// function hideButton() {
+//   button.style.display = "none";
+// }
+
+        //   <button class="quiz-button">Take Quiz</button }
+        
+
+        
+//   $(document).ready(function(){
+
+
+//   })
+// function showQuiz(quizId) {
+//     var quizContainer = document.getElementById("quiz-container");
+//     quizContainer.display="block";
+//     var modal = document.getElementById("quiz-modal");
+//     modal.style.display = "block";
+//   }
+
+        function showQuiz(quizId) {
+       var quiz = document.getElementById(quizId);
+       console.log(quiz)
+         quiz.style.display = "block";
+         quiz.style.marginRight="2000px"
+         quiz.style.height="400px"
+         quiz.style.width="300px"
+    
+    //      var modal = document.getElementById("quiz-modal");
+    // modal.style.display = "block";
+}
+
+function showQuizQuestion(quizId, questionNumber) {
+  console.log(questionNumber);
+  // Hide all quiz questions
+  const quizQuestions = document.querySelectorAll(`#${quizId} .quiz-question`);
+
+  quizQuestions.forEach((question) => {
+    question.style.display = "none";
+  });
+
+  // Show the selected quiz question
+  const selectedQuestion = document.querySelector(`#${quizId} #quiz-question-${questionNumber}`);
+  console.log(selectedQuestion);
+  selectedQuestion.style.display = "block";
+}
+// function showQuizQuestion(questionNumber) {
+ 
+//   console.log(questionNumber)
+//   // Hide all quiz questions
+//   const quizQuestions = document.querySelectorAll('.quiz-question');
+
+//   quizQuestions.forEach(question => {
+//     question.style.display = 'none';
+//   });
+
+//   // Show the selected quiz question
+//   const selectedQuestion = document.querySelector(`#quiz-question-${questionNumber}`);
+//   console.log(selectedQuestion)
+//   selectedQuestion.style.display = 'block';
+// }
+
+
+        //  quiz.style.display="scrollbars"
+        //  quiz.style.height="100px"
+        //  quiz.style.width="100px"
+
+//   }
+
+
+  function closeQuiz(quizId) {
+    var quiz = document.getElementById(quizId);
+         quiz.style.display = "none";
+  }
+//   function checkAnswer(selectedOption, question) {
+//   // get the correct option number as a string
+//   var selectedOption = document.querySelector('input[name=question1]:checked').value;
+//   const correctOption = question.CorrectOption.toString();
+
+//   // check if the selected option matches the correct option
+//   if (selectedOption === correctOption) {
+//     // return true if the answer is correct
+//     return true;
+//   } else {
+//     // return false if the answer is incorrect
+//     return false;
+//   }
+// }
+
+  
+
+     
+      // function checkAnswer(quizId, correctAnswer) {
+      //   var quiz = document.getElementById(quizId);
+      //   var selectedAnswer = quiz.querySelector('input[name=question1]:checked').value;
+      //   console.log(selectedAnswer)
+  
+      //   if (selectedAnswer === correctAnswer) {
+         
+      //     data:{
+      //       k : 
+      //       module: 
+      //     }          $.ajax({
+      //       url: 'http://localhost:9999/a/CourseComplete',
+      //       type: 'POST',
+      //       dataType: 'json',
+
+      // success: function(data) {
+
+      // }
+      //     })
+       
+      //     alert('Correct answer!');
+
+      //   } else {
+      //     alert('Incorrect answer. Please try again.');
+      //   }
+        
+      //   window.location.href="coursecontent.html"
+      // }
+      </script>
+</head>
+<body id="course-data">
+  <div class="progress-bar">
+    <div class="progress" id="s"></div>
+  </div>
+
+  <!-- <header>
+    <h1>Course Name</h1>
+    <p>Instructor Name</p>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="section-header">
+        <h2>Section 1: HTML Basics</h2>
+      </div>
+      <div class="module" onclick="location.href='#'">
+        <div class="module-name">Module 1: Introduction to HTML</div>
+        <div class="module-buttons">
+          <button class="play-button" onclick="showVideo('video1')">Play Video</button>
+          <button class="quiz-button">Take Quiz</button>
+        </div>
+        <video id="video1" src="path/to/video1.mp4" controls></video>
+      </div>
+    
+      <div class="module" onclick="location.href='#'">
+        <div class="module-name">Module 2: HTML Tags and Attributes</div>
+        <div class="module-buttons">
+          <button class="play-button" onclick="showVideo('video2')">Play Video</button>
+          <button class="quiz-button>Take Quiz</button>
+        </div>
+        <video id="video2" src="path/to/video2.mp4" controls></video>
+      </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Section 2: CSS Basics</h2>
+      </div>
+      <div class="module" onclick="location.href='#'">
+        <div class="module-name">Module 1: Introduction to CSS</div>
+        <div class="module-buttons">
+          <button class="play-button" onclick="showVideo('video3')">Play Video</button>
+          <button class="quiz-button">Take Quiz</button>
+        </div>
+        <video id="video3" src="path/to/video3.mp4" controls></video>
+      </div>
+          </div>
+        </div>
+        <div class="module" onclick="location.href='#'">
+          <div class="module-name">Module 2: CSS Syntax and Selectors</div>
+          <div class="module-buttons">
+            <button class="play-button" onclick="showVideo('video4')">Play Video</button>
+            <button class="quiz-button">Take Quiz</button>
+        </div>
+        <video id="video2" src="path/to/video.mp4" controls></video>
+      </div>
+          </div>
+        </div>
+      </section> -->
+<!-- </main> -->
+<script src="contents.js"></script>
+</body>
+</html>      

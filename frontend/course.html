@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>eLEARNING - eLearning HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+    <style>
+      .intro{
+        display: none;
+      }
+    </style>
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style (1).css" rel="stylesheet">
+    
+
+  <link href="css/course.css" rel="stylesheet">
+</head>
+
+
+      <!-- Spinner Start -->
+     
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+      <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+          <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>eLEARNING</h2>
+      </a>
+      <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto p-4 p-lg-0">
+              <a href="index.html" class="nav-item nav-link">Home</a>
+              <a href="about.html" class="nav-item nav-link ">About</a>
+              <a href="course.html" class="nav-item nav-link active">Courses</a>
+              <div class="nav-item dropdown">
+                  
+              </div>
+              <a href="contact.html" class="nav-item nav-link">Contact</a>
+          </div>
+          <div class="nav-item dropdown">
+          <div id="intro2" class="nav-item intro dropdown"> <a href="" id="user">hello</a></div>
+          <div class="dropdown-menu fade-down m-0">
+              <a href="user_profile.html" class="dropdown-item">Profile</a>
+              <a href="" onclick="fun2()" class="dropdown-item">LogOut</a>
+          </div>
+          </div>
+          <div id="intro1" class="nav-item"><a href="login (2).html" id="join" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="join">Join Now<i class="fa fa-arrow-right ms-3"></i></a></div>
+          
+         
+      </div>
+  </nav>
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Courses</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <!-- <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li> -->
+                            <li class="breadcrumb-item text-white active" aria-current="page">Courses</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <div class="main-content">
+      <div class="section__content section__content--p25">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-lg-12">
+                          <div id="courseslist">
+
+                          </div>
+                          
+            </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+<!-- <div class="card-container">
+    <div class="card">
+      <img src="/frontend/img/cat-1.jpg" alt="Image 1">
+      <h3 class="card-title">introduction-to-javascript</h3>
+      <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel velit velit.</p>
+      <button class="view-course-button" data-index="Advanced Javscript" id="button">View Course</button>
+    </div>
+    <div class="card">
+        <img src="/frontend/img/cat-2.jpg" alt="Image 1">
+        <h3 class="card-title">Data Science</h3>
+        <p class="card-desc">Learn to analyze, visualize and model data using statistical methods and programming.</p>
+
+        <button class="view-course-button" data-index="Data Science" id="button">View Course</button>
+      </div>
+      <div class="card">
+        <img src="/frontend/img/cat-2.jpg" alt="Image 1">
+        <h3 class="card-title">Web Development</h3>
+        <p class="card-desc">Study the basics of front-end and back-end web development using HTML, CSS, JavaScript and server-side technologies.</p>
+        <button class="view-course-button" data-index="Web Development" id="button">View Course</button>
+      </div>
+      <div class="card">
+        <img src="/frontend/img/cat-3.jpg" alt="Image 1">
+        <h3 class="card-title">Artificial Intelligence</h3>
+        <p class="card-desc">Gain an understanding of machine learning algorithms and their applications in image recognition, natural language processing and more.</p>
+        <button class="view-course-button" data-index="Artificial Intelligence" id="button">View Course</button>
+      </div>
+      <div class="card">
+        <img src="/frontend/img/cat-4.jpg" alt="Image 1">
+        <h3 class="card-title">Cybersecurity</h3>
+        <p class="card-desc"> Learn about the principles of computer security, cryptography, and ethical hacking.</p>
+        <button class="view-course-button" data-index="Cybersecurity Fundamentals" id="button">View Course</button>
+      </div> -->
+      <!-- <div class="card">
+        <img src="/frontend/img/course-1.jpg" alt="Image 1">
+        <h3 class="card-title">Digital Marketing</h3>
+        <p class="card-desc">Master the skills of online marketing, including search engine optimization, social media marketing, email marketing, and more.</p>
+        <button class="view-course-button" data-index="" id="button">View Course</button>
+      </div> -->
+   <!-- Footer Start -->
+   <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Quick Link</h4>
+                <a class="btn btn-link" href="">About Us</a>
+                <a class="btn btn-link" href="">Contact Us</a>
+                <a class="btn btn-link" href="">Privacy Policy</a>
+                <a class="btn btn-link" href="">Terms & Condition</a>
+                <a class="btn btn-link" href="">FAQs & Help</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Contact</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Darwinbox</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+9876543210</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>contact@darwinbox.com</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Anything to Say</h4>
+                <p>Feel Free to contact the admin or the Instructor for Doubt Resolving.</p>
+                <div class="position-relative mx-auto" style="max-width: 400px;">
+                    <!-- <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">Elearning by </a>, All Right Reserved.
+
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    Designed By <a class="border-bottom" href="">TEAM ROCKET</a><br><br>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-menu">
+                        <a href="instructorform.html">Home</a>
+                        <a href="instructor_form.html">Cookies</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+  </div>
+  <script src="js/main.js"></script>
+  <script>
+ window.onload=function(){
+    if(window.localStorage.getItem("k")!=null && window.localStorage.getItem("k")!=1){
+        document.getElementById("intro1").className="nav-item intro";
+        document.getElementById("intro2").className="nav-item";
+        // document.getElementById("intro3").className="nav-item";
+        // var ans=JSON.parse(window.localStorage.getItem("k"));
+        document.getElementById("user").innerHTML="Hello "+localStorage.getItem("k")+"!";
+    }
+}
+
+function fun2(){
+    //console.log(window.localStorage.getItem("k"))
+    bhi = JSON.stringify({Email:window.localStorage.getItem("k")})
+    console.log(bhi)
+    $.ajax({
+        "method": "POST", contentType: "application/json","data":bhi , "url": "http://localhost:9999/LogOutUser/logout",
+    "success": (e) => {
+      //alert("Successfully registered")
+      window.localStorage.setItem("k",1)
+       location.href="index.html"
+  }, error:(e) => {alert(e)}
+    });
+    window.localStorage.setItem("k",1);
+    window.localStorage.setItem("ROLL",1);
+  document.getElementById("Intro1").className="nav-item";
+  document.getElementById("intro2").className="nav-item intro-tag";
+  
+}
+    function retrieveSelectedCourse() {
+      return localStorage.getItem("selectedCourseIndex"); 
+    }
+    
+  var selectedCourseIndex = retrieveSelectedCourse();
+  
+  
+    // Function to save the selected course information in the local storage
+  function saveSelectedCourse(index) {
+  localStorage.setItem("selectedCourseIndex", index);
+  }
+  console.log("10000")
+
+  function fun1(){
+  var viewCourseButtons = document.querySelectorAll(".view-course-button");
+  for (var i = 0; i < viewCourseButtons.length; i++) {
+  viewCourseButtons[i].addEventListener("click", function() {
+    saveSelectedCourse(this.getAttribute("data-index"));
+  console.log(this.getAttribute('data-index'))
+    window.location.href = "viewcourse.html";
+  });
+  }
+}
+
+  
+  </script>  
+  <script src="js/main.js"></script>
+  <script src="js/course1.js"></script>
+<!-- <script src="js/view.js"></script> -->
+</body>
+</html>
